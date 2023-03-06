@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script type="text/javascript" src="images/config.js"></script>
+    <script type="text/javascript" src="../images/config.js"></script>
   </head>
   
   <style>
@@ -425,7 +425,7 @@
         html_ = '<div class="content w100 h100' + (sid_ == 0 ? ' ha' : '') + '">';
         html_ += '<div class="title2 cvh">' + i['text'] + '</div>';
         html_ += '<div class="cvh imgparent frow">';
-        html_ += '<img class="main" src="images/' + i['image'] + '" alt="">';
+        html_ += '<img class="main" src="../images/' + i['image'] + '" alt="">';
         html_ += '</div>';
         html_ += '</div>';
 
@@ -455,7 +455,7 @@
           images_keys = Object.keys(product['images']);
           images_ = product['images'][images_keys[0]];
           for (const i of images_) {
-            html_ += '<img src="' + 'images/' + i + '" alt="">';
+            html_ += '<img src="' + '../images/' + i + '" alt="">';
           }
           html_ += '</div>';
 
@@ -544,7 +544,7 @@
         images = product_config['categories'][cat_id]['products'][product_id]['images'][color];
 
         for (const i of images) {
-          $(product).find('.img-parent').append('<img src="' + 'images/' + i + '">');
+          $(product).find('.img-parent').append('<img src="' + '../images/' + i + '">');
           if (images.length > 1) {
             $(product).find('.bullets > div').append('<div onclick="bulletClicked(this)"></div>');
           }
