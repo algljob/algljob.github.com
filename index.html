@@ -3,10 +3,12 @@
   <head>
     <meta charset=utf-8>
     <title>Bolston</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="images/config.js"></script>
   </head>
   
   <style>
@@ -17,6 +19,7 @@
       width: 100vw;
       font-family: 'Pacifico';
       color: #001A23;
+      background-color: #F8F4F9;
     }
 
     * {
@@ -138,6 +141,7 @@
     .main .content {
       opacity: 0!important;
       transition: all 1s ease;
+      height: calc(100% - 200px);
     }
     .main .content.ha {
       opacity: 1!important;
@@ -155,7 +159,7 @@
 
     .products > div {
       width: 300px;
-      height: 600px;
+      height: 630px;
       padding: 30px;
       border-radius: 20px;
       background-color: #F8F4F9;
@@ -191,6 +195,15 @@
 
     .products > div .img-parent {
       height: 300px;
+      overflow: hidden;
+    }
+
+    .products > div .img-parent > img {
+      min-width: 240px;
+    }
+
+    .products > div .img-parent > img:not(:last-child) {
+      margin-right: 50px;
     }
 
     .products > div .price {
@@ -223,6 +236,7 @@
 
     .products button:hover {
       background-color: #DD7755;
+      transform: scale(1.05);
     }
 
     .products button:active {
@@ -246,6 +260,138 @@
     .cats > div.active {
       opacity: 1;
     }
+
+    /*  */
+    .bullets {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .bullets > div > div {
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      background-color: #001A23;
+      opacity: 0.25;
+      transition: all 0.5s ease;
+    }
+
+    .bullets > div {
+      min-height: 12px;
+      cursor: pointer;
+    }
+
+    .bullets > div > div.active {
+      opacity: 1;
+    }
+
+    .bullets > div > div:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    /*  */
+    .colors > div {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .colors > div:hover {
+      transform: scale(1.1);
+    }
+
+    .colors > div.active {
+      transform: rotate(45deg);
+    }
+
+    .colors > div.active:hover {
+      transform: rotate(45deg) scale(1.1);
+    }
+
+    .colors > div:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    /* For Mobile */
+    @media only screen and (pointer:none), (pointer:coarse) {
+      .title2 {
+        font-size: 60pt;
+        transform: translateX(-50%) translateY(90%);
+        text-shadow: 0px 10px 10px rgba(0,0,0,0.1),
+             0px 4px 6px rgba(0,0,0,0.02),
+             0px 9px 11px rgba(0,0,0,0.02);
+        text-align: center;
+      }
+
+      .imgparent {
+        width: 100%;
+        height: 300px;
+        margin-inline: auto;
+      }
+
+      .img.main {
+        margin-bottom: 0;
+      }
+
+      .main .content {
+        width: 100%; margin-inline: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        position: absolute; top: 50%; transform: translateY(-50%);
+        height: auto;
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .main .content > div.cvh {
+        position: initial;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+
+      .products {
+        display: flex;
+        flex-direction: column;
+        margin-inline: auto;
+      }
+
+      .products > div {
+        height: auto;
+      }
+
+      .price {
+        margin-top: 20px;
+      }
+
+      .cats {
+        width: 300px;
+        margin-inline: auto;
+        margin-bottom: 30px;
+      }
+
+      .cats > div {
+        margin-right: 30px;
+      }
+
+      .bullets > div > div {
+        width: 15px;
+        height: 15px;
+      }
+
+      .bullets > div > div:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      .scroller {
+        height: 100%;
+      }
+    }
   </style>
 
   <body>
@@ -254,32 +400,7 @@
         <div class="frow jc w100" style="position: absolute; top: 30px">
           <div class="title">Bolston</div>
         </div>
-  
-        <div>
-          <div class="content w100 h100 ha" style="height: calc(100% - 200px); margin-top: 100px">
-            <div class="title2 cvh">CARTERAS</div>
-            <div class="cvh imgparent frow">
-              <img class="main" src="images/bag.png" alt="">
-            </div>
-          </div>
-  
-          <div class="content w100 h100" style="height: calc(100% - 200px); margin-top: 100px">
-            <div class="title2 cvh">ZAPATOS</div>
-            <div class="cvh imgparent frow">
-              <img class="main" src="images/bag.png" alt="">
-            </div>
-          </div>
-  
-          <div class="content w100 h100" style="height: calc(100% - 200px); margin-top: 100px">
-            <div class="title2 cvh">BILLETERAS</div>
-            <div class="cvh imgparent frow">
-              <img class="main" src="images/bag.png" alt="">
-            </div>
-          </div>
-
-          
-        </div>
-  
+        <div class="scroller"></div>
         <div class="w100" style="position: absolute; bottom: 40px">
           <div onclick="arrowClicked()" class="long-arrow-right"></div>
         </div>
@@ -289,102 +410,94 @@
     <div class="fcol w100 h100" style="background-color: #F8F4F9;">
       <div class="h100 w100" style="position: relative">
         <div class="fcol content w100 h100">
-          <div class="cats frow js">
-            <div data-cat="1" class="active">Carteras</div>
-            <div data-cat="2">Zapatos</div>
-            <div data-cat="3">Billeteras</div>
-          </div>
-
-          <div class="products">
-            <!-- Carteras -->
-            <div class="fcol h100 jb" data-cat="1">
-              <div>
-                <div class="img-parent">
-                  <img src="images/bag.png" alt="">
-                </div>
-                <div class="title">Bolsa grande Xenia</div>
-                <div class="subtitle">Color: Azul</div>
-                <div class="text">
-                  Put some nice description here. Preferably long enough to interest the clients.
-                </div>
-              </div>
-
-              <div class="frow jb">
-                <div class="price"><span>S/</span>12</div>
-                <div class="fcol je">
-                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="fcol h100 jb" data-cat="1">
-              <div>
-                <div class="img-parent">
-                  <img src="images/bag.png" alt="">
-                </div>
-                <div class="title">Bolsa grande Xenia</div>
-                <div class="subtitle">Color: Azul</div>
-                <div class="text">
-                  Put some nice description here. Preferably long enough to interest the clients.
-                </div>
-              </div>
-
-              <div class="frow jb">
-                <div class="price"><span>S/</span>12</div>
-                <div class="fcol je">
-                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Zapatos -->
-            <div class="fcol h100 jb" data-cat="2">
-              <div>
-                <div class="img-parent">
-                  <img src="images/bag.png" alt="">
-                </div>
-                <div class="title">Bolsa mediana Xenia</div>
-                <div class="subtitle">Color: Azul</div>
-                <div class="text">
-                  Put some nice description here. Preferably long enough to interest the clients.
-                </div>
-              </div>
-
-              <div class="frow jb">
-                <div class="price"><span>S/</span>12</div>
-                <div class="fcol je">
-                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Billeteras -->
-            <div class="fcol h100 jb" data-cat="3">
-              <div>
-                <div class="img-parent">
-                  <img src="images/bag.png" alt="">
-                </div>
-                <div class="title">Bolsa chica Xenia</div>
-                <div class="subtitle">Color: Azul</div>
-                <div class="text">
-                  Put some nice description here. Preferably long enough to interest the clients.
-                </div>
-              </div>
-
-              <div class="frow jb">
-                <div class="price"><span>S/</span>12</div>
-                <div class="fcol je">
-                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="cats frow js"></div>
+          <div class="products"></div>
         </div>
       </div>
     </div>
 
     <script>
       cur_cat = 2;
+
+      // Load main page scroller items
+      sid_ = 0;
+      for (const i of product_config['scroller']) {
+        html_ = '<div class="content w100 h100' + (sid_ == 0 ? ' ha' : '') + '">';
+        html_ += '<div class="title2 cvh">' + i['text'] + '</div>';
+        html_ += '<div class="cvh imgparent frow">';
+        html_ += '<img class="main" src="images/' + i['image'] + '" alt="">';
+        html_ += '</div>';
+        html_ += '</div>';
+
+        $('.scroller').append(html_);
+        sid_ += 1;
+      }
+
+      // Load products
+      cat_id = 0;
+      for (const cat of product_config['categories']) {
+        catname = cat['name'];
+
+        $('.cats').append('<div' + (cat_id == 0 ? ' class="active"' : '') + ' data-cat="' + catname + '">' + catname + '</div>');
+
+        product_id = 0;
+        for (const product of cat['products']) {
+          name = product['name'];
+          desc = product['description'];
+          price = product['price'];
+          sku = product['code'];
+
+          // Build HTML
+          html_ = '<div class="fcol h100 jb product' + (cat_id == 0 ? '' : ' h') + '" data-cat="' + catname + '" data-cat-id="' + String(cat_id) + '" data-product-id="' + String(product_id) + '">';
+          html_ += '<div>';
+
+          html_ += '<div class="img-parent frow">';
+          images_keys = Object.keys(product['images']);
+          images_ = product['images'][images_keys[0]];
+          for (const i of images_) {
+            html_ += '<img src="' + 'images/' + i + '" alt="">';
+          }
+          html_ += '</div>';
+
+          html_ += '<div class="bullets frow jc">';
+          html_ += '<div class="frow">';
+          if (images_.length > 1) {
+            for (i = 0; i < images_.length; i++) {
+              html_ += '<div onclick="bulletClicked(this)"' + (i == 0 ? ' class="active"' : '') + '></div>';
+            }
+          }
+          html_ += '</div>';
+          html_ += '</div>';
+
+          html_ += '<div class="title">' + name + '</div>';
+
+          html_ += '<div class="frow jb subtitle">';
+          html_ += '<div>Color</div>';
+          html_ += '<div class="colors frow">';
+          for (i = 0; i < images_keys.length; i++) {
+            k = images_keys[i];
+            html_ += '<div ' + (images_keys.length > 1 ? 'onclick="colorClicked(this)"' : '') + ' data-color-name="' + product['colors'][k] + '"' + ' data-color="' + k + '" style="background-color: ' + k + '"' + (i == 0 ? ' class="active"' : '') + '></div>';
+          }
+          html_ += '</div>';
+          html_ += '</div>';
+
+          html_ += '<div class="text">' + desc + '</div>';
+          html_ += '</div>';
+          html_ += '<div class="frow jb">';
+          html_ += '<div class="price"><span>S/</span>' + String(price) + '</div>';
+          html_ += '<div class="fcol je">';
+          html_ += '<button onclick="quieroClicked(this, ' + "'" + sku + "'" + ')">Quiero</button>';
+          html_ += '</div>';
+          html_ += '</div>';
+          html_ += '</div>';
+
+          // Append HTML
+          $('.products').append(html_);
+
+          product_id += 1;
+        }
+        cat_id += 1;
+      }
 
       setInterval(function() {
         $('.main .content').removeClass('ha');
@@ -396,14 +509,58 @@
         }
       }, 4000)
 
+      function bulletClicked(this_) {
+        $(this_).parent().find('div').removeClass('active');
+        $(this_).addClass('active');
+
+        id_ = $(this_).index();
+
+        offset = 0;
+        if (id_ == $(this_).parent().find('div').length - 1) {
+          offset = 300 * id_;
+        } else if (id_ == 0) {
+          offset = 0;
+        } else {
+          offset = 290 * id_;
+        }
+
+        product = $(this_).closest('.product');
+        $(product).find('.img-parent').animate({
+            scrollLeft: offset
+        }, 500);
+      }
+
+      function colorClicked(this_) {
+        $(this_).parent().find('div').removeClass('active');
+        $(this_).addClass('active');
+
+        color = $(this_).attr('data-color');
+        product = $(this_).closest('.product');
+        cat_id = parseInt($(product).attr('data-cat-id'));
+        product_id = parseInt($(product).attr('data-product-id'));
+        $(product).find('.img-parent').html('');
+        $(product).find('.bullets > div').html('');
+
+        images = product_config['categories'][cat_id]['products'][product_id]['images'][color];
+
+        for (const i of images) {
+          $(product).find('.img-parent').append('<img src="' + 'images/' + i + '">');
+          if (images.length > 1) {
+            $(product).find('.bullets > div').append('<div onclick="bulletClicked(this)"></div>');
+          }
+        }
+        $(product).find('.bullets > div > div:first-child').addClass('active');
+      }
+
       function arrowClicked() {
         $('html, body').animate({
             scrollTop: $('body').height() * 2
         }, 1000);
       }
 
-      function quieroClicked(code) {
-        window.location = 'https://api.whatsapp.com/send?phone=51912825315&text=Hello! I want to know more about product ' + code;
+      function quieroClicked(this_, code) {
+        color_ = $(this_).closest('.product').find('.colors > div.active').attr('data-color-name');
+        window.location = 'https://api.whatsapp.com/send?phone=51912825315&text=Hello! I want to know more about product ' + code + ' of color ' + color_;
       }
 
       $('.cats > div').on('click', function() {
