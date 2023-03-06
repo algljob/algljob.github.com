@@ -1,9 +1,9 @@
 product_config = {
     // Main page image scroller
     "scroller": [
-        {"image": "_scroller_/1.png", "text": "CARTERAS"},
-        {"image": "_scroller_/1.png", "text": "ZAPATOS"},
-        {"image": "_scroller_/1.png", "text": "BILLETERAS"}
+        {"image": "scroller/1.png", "text": "CARTERAS"},
+        {"image": "scroller/1.png", "text": "ZAPATOS"},
+        {"image": "scroller/1.png", "text": "BILLETERAS"}
     ],
 
     // Product categories
