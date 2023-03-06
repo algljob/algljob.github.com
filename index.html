@@ -3,9 +3,416 @@
   <head>
     <meta charset=utf-8>
     <title>Bolston</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   </head>
   
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100vw;
+      font-family: 'Pacifico';
+      color: #001A23;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    #main {
+      padding: 30px;
+    }
+
+    .fcol {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .frow {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .js {
+      justify-content: flex-start;
+    }
+
+    .jc {
+      justify-content: center;
+    }
+
+    .je {
+      justify-content: flex-end;
+    }
+
+    .jb {
+      justify-content: space-between;
+    }
+
+    .cvh {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    .w100 {
+      width: 100%;
+    }
+
+    .h100 {
+      height: 100%;
+    }
+
+    .h {
+      display: none;
+    }
+
+    /*  */
+    .title {
+      font-size: 24pt;
+    }
+
+    /*  */
+    .title2 {
+      font-family: 'Staatliches';
+      font-size: 216pt;
+      font-weight: 900;
+      color: #F8F4F9;
+      text-shadow: 0px 20px 20px rgba(0,0,0,0.1),
+             0px 8px 13px rgba(0,0,0,0.02),
+             0px 18px 23px rgba(0,0,0,0.02);
+    }
+
+    /*  */
+    @keyframes clickme {
+      0% {  margin-bottom: 10px }
+      50% { margin-bottom: 5px }
+      100% {  margin-bottom: 10px }
+    }
+
+    .long-arrow-right {
+      display: block;
+      margin: 0px auto;
+      margin-bottom: 10px;
+      width: 20px;
+      height: 20px;
+      border-top: 5px solid #001A23;
+      border-left: 5px solid #001A23;
+      border-radius: 2px;
+      transform: rotate(225deg);
+      transition: all 0.5s ease;
+      cursor: pointer;
+      animation-name: clickme;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+    .long-arrow-right:hover {
+      transform: rotate(225deg) scale(1.1);
+    }
+
+    /*  */
+    img.main {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      margin: auto;
+      /* filter: drop-shadow(0 0 5px #001A23B2) drop-shadow(0 0 15px #001A2346); */
+      padding: 20px;
+    }
+
+    .imgparent {
+      width: 600px;
+      height: 600px;
+    }
+
+    /*  */
+    .content {
+      padding: 50px;
+    }
+
+    .main .content {
+      opacity: 0!important;
+      transition: all 1s ease;
+    }
+    .main .content.ha {
+      opacity: 1!important;
+      z-index: 1;
+    }
+
+    /*  */
+    .products {
+      display: flex;
+      flex-direction: row;
+      flex: 1 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .products > div {
+      width: 300px;
+      height: 600px;
+      padding: 30px;
+      border-radius: 20px;
+      background-color: #F8F4F9;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      font-family: 'Alice';
+      position: relative;
+      margin-bottom: 50px;
+    }
+
+    .products > div img {
+      object-fit: contain;
+      max-width: 100%;
+      max-height: 100%;
+      margin-inline: auto;
+    }
+
+    .products > div .title {
+      font-size: 20pt;
+      font-weight: bold;
+      margin-top: 10px
+    }
+
+    .products > div .subtitle {
+      font-size: 16pt;
+      margin-top: 10px;
+      color: #63606C;
+    }
+
+    .products > div .text {
+      font-size: 16pt;
+      margin-top: 10px;
+    }
+
+    .products > div .img-parent {
+      height: 300px;
+    }
+
+    .products > div .price {
+      font-size: 32pt;
+      margin-top: 10px;
+    }
+
+    .products > div .price > span {
+      font-size: 18pt;
+      opacity: 0.8;
+    }
+
+    .products > div .sku {
+      font-size: 16pt;
+      opacity: 0.8;
+    }
+
+    /*  */
+    .products button {
+      background-color: #EDB6A3;
+      transition: all 0.5s ease;
+      outline: none;
+      border: none;
+      border-radius: 20px;
+      height: 40px;
+      font-size: 16pt;
+      padding-inline: 10px;
+      cursor: pointer;
+    }
+
+    .products button:hover {
+      background-color: #DD7755;
+    }
+
+    .products button:active {
+      opacity: 0.5;
+    }
+
+    /*  */
+    .cats {
+      margin-bottom: 50px;
+    }
+
+    .cats > div {
+      font-size: 18pt;
+      font-weight: bold;
+      font-family: 'Alice';
+      margin-right: 50px;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    .cats > div.active {
+      opacity: 1;
+    }
+  </style>
+
   <body>
-    <p>I'm the content</p>
+    <div class="main fcol w100 h100" style="background: rgb(248,244,249); background: linear-gradient(0deg, rgba(248,244,249,1) 13%, rgba(255,217,206,1) 100%);">
+      <div class="h100 w100" style="position: relative">
+        <div class="frow jc w100" style="position: absolute; top: 30px">
+          <div class="title">Bolston</div>
+        </div>
+  
+        <div>
+          <div class="content w100 h100 ha" style="height: calc(100% - 200px); margin-top: 100px">
+            <div class="title2 cvh">CARTERAS</div>
+            <div class="cvh imgparent frow">
+              <img class="main" src="images/bag.png" alt="">
+            </div>
+          </div>
+  
+          <div class="content w100 h100" style="height: calc(100% - 200px); margin-top: 100px">
+            <div class="title2 cvh">ZAPATOS</div>
+            <div class="cvh imgparent frow">
+              <img class="main" src="images/bag.png" alt="">
+            </div>
+          </div>
+  
+          <div class="content w100 h100" style="height: calc(100% - 200px); margin-top: 100px">
+            <div class="title2 cvh">BILLETERAS</div>
+            <div class="cvh imgparent frow">
+              <img class="main" src="images/bag.png" alt="">
+            </div>
+          </div>
+
+          
+        </div>
+  
+        <div class="w100" style="position: absolute; bottom: 40px">
+          <div onclick="arrowClicked()" class="long-arrow-right"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fcol w100 h100" style="background-color: #F8F4F9;">
+      <div class="h100 w100" style="position: relative">
+        <div class="fcol content w100 h100">
+          <div class="cats frow js">
+            <div data-cat="1" class="active">Carteras</div>
+            <div data-cat="2">Zapatos</div>
+            <div data-cat="3">Billeteras</div>
+          </div>
+
+          <div class="products">
+            <!-- Carteras -->
+            <div class="fcol h100 jb" data-cat="1">
+              <div>
+                <div class="img-parent">
+                  <img src="images/bag.png" alt="">
+                </div>
+                <div class="title">Bolsa grande Xenia</div>
+                <div class="subtitle">Color: Azul</div>
+                <div class="text">
+                  Put some nice description here. Preferably long enough to interest the clients.
+                </div>
+              </div>
+
+              <div class="frow jb">
+                <div class="price"><span>S/</span>12</div>
+                <div class="fcol je">
+                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="fcol h100 jb" data-cat="1">
+              <div>
+                <div class="img-parent">
+                  <img src="images/bag.png" alt="">
+                </div>
+                <div class="title">Bolsa grande Xenia</div>
+                <div class="subtitle">Color: Azul</div>
+                <div class="text">
+                  Put some nice description here. Preferably long enough to interest the clients.
+                </div>
+              </div>
+
+              <div class="frow jb">
+                <div class="price"><span>S/</span>12</div>
+                <div class="fcol je">
+                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Zapatos -->
+            <div class="fcol h100 jb" data-cat="2">
+              <div>
+                <div class="img-parent">
+                  <img src="images/bag.png" alt="">
+                </div>
+                <div class="title">Bolsa mediana Xenia</div>
+                <div class="subtitle">Color: Azul</div>
+                <div class="text">
+                  Put some nice description here. Preferably long enough to interest the clients.
+                </div>
+              </div>
+
+              <div class="frow jb">
+                <div class="price"><span>S/</span>12</div>
+                <div class="fcol je">
+                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Billeteras -->
+            <div class="fcol h100 jb" data-cat="3">
+              <div>
+                <div class="img-parent">
+                  <img src="images/bag.png" alt="">
+                </div>
+                <div class="title">Bolsa chica Xenia</div>
+                <div class="subtitle">Color: Azul</div>
+                <div class="text">
+                  Put some nice description here. Preferably long enough to interest the clients.
+                </div>
+              </div>
+
+              <div class="frow jb">
+                <div class="price"><span>S/</span>12</div>
+                <div class="fcol je">
+                  <button onclick="quieroClicked('AHJ3F')">Quiero</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      cur_cat = 2;
+
+      setInterval(function() {
+        $('.main .content').removeClass('ha');
+        $('.main .content:nth-child(' + String(cur_cat) + ')').addClass('ha');
+        if (cur_cat == 3) {
+          cur_cat = 1;
+        } else {
+          cur_cat += 1;
+        }
+      }, 4000)
+
+      function arrowClicked() {
+        $('html, body').animate({
+            scrollTop: $('body').height() * 2
+        }, 1000);
+      }
+
+      function quieroClicked(code) {
+        window.location = 'https://api.whatsapp.com/send?phone=51912825315&text=Hello! I want to know more about product ' + code;
+      }
+
+      $('.cats > div').on('click', function() {
+        $('.cats > div').removeClass('active');
+        $(this).addClass('active');
+        cat = $(this).attr('data-cat');
+        $('.products > div').addClass('h');
+        $('.products > div[data-cat="' + cat + '"]').removeClass('h');
+      })
+    </script>
   </body>
 </html>
