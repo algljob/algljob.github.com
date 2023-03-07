@@ -1,9 +1,12 @@
 product_config = {
+    // Phone number of Whatsapp
+    "phone": "51912825315",
+
     // Main page image scroller
     "scroller": [
-        {"image": "scroller/1.png", "text": "CARTERAS"},
-        {"image": "scroller/1.png", "text": "ZAPATOS"},
-        {"image": "scroller/1.png", "text": "BILLETERAS"}
+        {"image": "carteras/1/1.png", "text": "CARTERAS"},
+        {"image": "zapatos/1/1.png", "text": "ZAPATOS"},
+        {"image": "billeteras/1/7.png", "text": "BILLETERAS"}
     ],
 
     // Product categories
@@ -14,41 +17,73 @@ product_config = {
             "products": [
                 {
                     "images": {
-                        "blue": ["carteras/1/1.jpeg", "carteras/1/2.jpeg", "carteras/1/3.jpeg", "carteras/1/4.jpeg", "carteras/1/5.jpeg", "carteras/1/6.jpeg"]
+                        "rgb(72, 88, 130)": ["carteras/1/1.png", "carteras/1/2.png", "carteras/1/3.png", "carteras/1/4.png", "carteras/1/5.png", "carteras/1/6.png"]
                     },
                     "colors": {
-                        "blue": "Azul"
+                        "rgb(72, 88, 130)": "Azul"
                     },
-                    "name": "Bolsa Xenia",
-                    "description": "Una bolsa bonita para ti para cada dia",
-                    "price": 120,
-                    "code": "HJFK4"
+                    "name": "Name",
+                    "description": "Description",
+                    "price": 100,
+                    "code": "code"
                 },
 
                 {
                     "images": {
-                        "blue": ["carteras/1/1.jpeg", "carteras/1/2.jpeg", "carteras/1/3.jpeg", "carteras/1/4.jpeg", "carteras/1/5.jpeg", "carteras/1/6.jpeg"]
+                        "rgb(50, 58, 58)": ["carteras/2/1.png", "carteras/2/2.png", "carteras/2/3.png", "carteras/2/4.png", "carteras/2/5.png", "carteras/2/6.png"]
                     },
                     "colors": {
-                        "blue": "Azul"
+                        "rgb(50, 58, 58)": "Negro"
                     },
-                    "name": "Bolsa Xenia",
-                    "description": "Una bolsa bonita para ti para cada dia",
-                    "price": 120,
-                    "code": "HJFK4"
+                    "name": "Name",
+                    "description": "Description",
+                    "price": 100,
+                    "code": "code"
                 },
 
                 {
                     "images": {
-                        "blue": ["carteras/1/1.jpeg", "carteras/1/2.jpeg", "carteras/1/3.jpeg", "carteras/1/4.jpeg", "carteras/1/5.jpeg", "carteras/1/6.jpeg"]
+                        "rgb(70, 82, 106)": ["carteras/3/1.png", "carteras/3/2.png", "carteras/3/3.png", "carteras/3/4.png"]
                     },
                     "colors": {
-                        "blue": "Azul"
+                        "rgb(70, 82, 106)": "Azul"
                     },
-                    "name": "Bolsa Xenia",
-                    "description": "Una bolsa bonita para ti para cada dia",
-                    "price": 120,
-                    "code": "HJFK4"
+                    "name": "Name",
+                    "description": "Description",
+                    "price": 100,
+                    "code": "code"
+                },
+
+                {
+                    "images": {
+                        "rgb(200, 114, 40)": ["carteras/4/1.png", "carteras/4/2.png", "carteras/4/3.png", "carteras/4/4.png", "carteras/4/5.png", "carteras/4/6.png"]
+                    },
+                    "colors": {
+                        "rgb(200, 114, 40)": "Marron"
+                    },
+                    "name": "Name",
+                    "description": "Description",
+                    "price": 100,
+                    "code": "code"
+                }
+            ]
+        },
+
+        // Zapatos
+        {
+            "name": "Zapatos",
+            "products": [
+                {
+                    "images": {
+                        "rgb(200, 114, 40)": ["zapatos/1/1.png", "zapatos/1/2.png"]
+                    },
+                    "colors": {
+                        "rgb(200, 114, 40)": "Color"
+                    },
+                    "name": "Name",
+                    "description": "Description",
+                    "price": 100,
+                    "code": "code"
                 }
             ]
         },
@@ -59,116 +94,21 @@ product_config = {
             "products": [
                 {
                     "images": {
-                        "blue": ["billeteras/1/1.jpeg", "billeteras/1/2.jpeg", "billeteras/1/3.jpeg", "billeteras/1/4.jpeg"],
-                        "maroon": ["billeteras/1/5.jpeg"],
-                        "red": ["billeteras/1/6.jpeg"],
-                        "yellow": ["billeteras/1/7.jpeg"]
+                        "rgb(100, 70, 61)": ["billeteras/1/1.png", "billeteras/1/2.png", "billeteras/1/3.png", "billeteras/1/4.png"],
+                        "rgb(49, 50, 55)": ["billeteras/1/5.png"],
+                        "rgb(158, 83, 111)": ["billeteras/1/6.png"],
+                        "rgb(210, 66, 74)": ["billeteras/1/7.png"]
                     },
                     "colors": {
-                        "blue": "Azul",
-                        "maroon": "Marron",
-                        "red": "Rojo",
-                        "yellow": "Amarillo"
+                        "rgb(100, 70, 61)": "Marron",
+                        "rgb(49, 50, 55)": "Negro",
+                        "rgb(158, 83, 111)": "Rosado",
+                        "rgb(210, 66, 74)": "Rojo"
                     },
-                    "name": "Billetera Bonita",
-                    "description": "Para tu alcancio",
-                    "price": 80,
-                    "code": "HAFK4"
-                },
-
-                {
-                    "images": {
-                        "blue": ["billeteras/1/1.jpeg", "billeteras/1/2.jpeg", "billeteras/1/3.jpeg", "billeteras/1/4.jpeg"],
-                        "maroon": ["billeteras/1/5.jpeg"],
-                        "red": ["billeteras/1/6.jpeg"],
-                        "yellow": ["billeteras/1/7.jpeg"]
-                    },
-                    "colors": {
-                        "blue": "Azul",
-                        "maroon": "Marron",
-                        "red": "Rojo",
-                        "yellow": "Amarillo"
-                    },
-                    "name": "Billetera Bonita",
-                    "description": "Para tu alcancio",
-                    "price": 80,
-                    "code": "HAFK4"
-                },
-
-                {
-                    "images": {
-                        "blue": ["billeteras/1/1.jpeg", "billeteras/1/2.jpeg", "billeteras/1/3.jpeg", "billeteras/1/4.jpeg"],
-                        "maroon": ["billeteras/1/5.jpeg"],
-                        "red": ["billeteras/1/6.jpeg"],
-                        "yellow": ["billeteras/1/7.jpeg"]
-                    },
-                    "colors": {
-                        "blue": "Azul",
-                        "maroon": "Marron",
-                        "red": "Rojo",
-                        "yellow": "Amarillo"
-                    },
-                    "name": "Billetera Bonita",
-                    "description": "Para tu alcancio",
-                    "price": 80,
-                    "code": "HAFK4"
-                },
-
-                {
-                    "images": {
-                        "blue": ["billeteras/1/1.jpeg", "billeteras/1/2.jpeg", "billeteras/1/3.jpeg", "billeteras/1/4.jpeg"],
-                        "maroon": ["billeteras/1/5.jpeg"],
-                        "red": ["billeteras/1/6.jpeg"],
-                        "yellow": ["billeteras/1/7.jpeg"]
-                    },
-                    "colors": {
-                        "blue": "Azul",
-                        "maroon": "Marron",
-                        "red": "Rojo",
-                        "yellow": "Amarillo"
-                    },
-                    "name": "Billetera Bonita",
-                    "description": "Para tu alcancio",
-                    "price": 80,
-                    "code": "HAFK4"
-                },
-
-                {
-                    "images": {
-                        "blue": ["billeteras/1/1.jpeg", "billeteras/1/2.jpeg", "billeteras/1/3.jpeg", "billeteras/1/4.jpeg"],
-                        "maroon": ["billeteras/1/5.jpeg"],
-                        "red": ["billeteras/1/6.jpeg"],
-                        "yellow": ["billeteras/1/7.jpeg"]
-                    },
-                    "colors": {
-                        "blue": "Azul",
-                        "maroon": "Marron",
-                        "red": "Rojo",
-                        "yellow": "Amarillo"
-                    },
-                    "name": "Billetera Bonita",
-                    "description": "Para tu alcancio",
-                    "price": 80,
-                    "code": "HAFK4"
-                },
-
-                {
-                    "images": {
-                        "blue": ["billeteras/1/1.jpeg", "billeteras/1/2.jpeg", "billeteras/1/3.jpeg", "billeteras/1/4.jpeg"],
-                        "maroon": ["billeteras/1/5.jpeg"],
-                        "red": ["billeteras/1/6.jpeg"],
-                        "yellow": ["billeteras/1/7.jpeg"]
-                    },
-                    "colors": {
-                        "blue": "Azul",
-                        "maroon": "Marron",
-                        "red": "Rojo",
-                        "yellow": "Amarillo"
-                    },
-                    "name": "Billetera Bonita",
-                    "description": "Para tu alcancio",
-                    "price": 80,
-                    "code": "HAFK4"
+                    "name": "Name",
+                    "description": "Description",
+                    "price": 100,
+                    "code": "code"
                 }
             ]
         }
