@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script type="text/javascript" src="../images/config.js"></script>
+    <script type="text/javascript" src="images/config.js"></script>
   </head>
   
   <style>
@@ -158,11 +158,9 @@
 
     /*  */
     .products {
-      display: flex;
-      flex-direction: row;
-      flex: 1 1;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-gap: auto;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) ;
     }
 
     .products > div {
@@ -173,7 +171,6 @@
       background-color: #F8F4F9;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       font-family: 'Alice';
-      position: relative;
       margin-bottom: 50px;
     }
 
@@ -428,6 +425,8 @@
     </div>
 
     <script>
+      is_mobile_ = window.matchMedia("only screen and (pointer:none), (pointer:coarse)").matches;
+
       cur_cat = 2;
 
       // Load main page scroller items
@@ -436,7 +435,7 @@
         html_ = '<div class="content w100 h100' + (sid_ == 0 ? ' ha' : '') + '">';
         html_ += '<div class="title2 cvh">' + i['text'] + '</div>';
         html_ += '<div class="cvh imgparent frow">';
-        html_ += '<img class="main" src="../images/' + i['image'] + '" alt="">';
+        html_ += '<img class="main" src="images/' + i['image'] + '" alt="">';
         html_ += '</div>';
         html_ += '</div>';
 
@@ -449,7 +448,7 @@
       for (const cat of product_config['categories']) {
         catname = cat['name'];
 
-        $('.cats').append('<div' + (cat_id == 0 ? ' class="active"' : '') + ' data-cat="' + catname + '">' + catname + '</div>');
+        $('.cats').append('<div' + (cat_id == 0 ? ' class="active"' : '') + ' data-cat="' + catname + '">' + (is_mobile_ ? (cat_id == 0 ? catname : ('[' + catname.charAt(0) + ']')) : catname) + '</div>');
 
         product_id = 0;
         for (const product of cat['products']) {
@@ -466,7 +465,7 @@
           images_keys = Object.keys(product['images']);
           images_ = product['images'][images_keys[0]];
           for (const i of images_) {
-            html_ += '<img src="' + '../images/' + i + '" alt="">';
+            html_ += '<img src="' + 'images/' + i + '" alt="">';
           }
           html_ += '</div>';
 
@@ -555,7 +554,7 @@
         images = product_config['categories'][cat_id]['products'][product_id]['images'][color];
 
         for (const i of images) {
-          $(product).find('.img-parent').append('<img src="' + '../images/' + i + '">');
+          $(product).find('.img-parent').append('<img src="' + 'images/' + i + '">');
           if (images.length > 1) {
             $(product).find('.bullets > div').append('<div onclick="bulletClicked(this)"></div>');
           }
@@ -580,6 +579,14 @@
         cat = $(this).attr('data-cat');
         $('.products > div').addClass('h');
         $('.products > div[data-cat="' + cat + '"]').removeClass('h');
+        $('.products > div.nohide').removeClass('h');
+
+        if (is_mobile_) {
+          $('.cats > div').each(function(i, el) {
+            $(el).text('[' + $(el).attr('data-cat').charAt(0) + ']');
+          })
+          $(this).text($(this).attr('data-cat'));
+        }
       })
     </script>
   </body>
