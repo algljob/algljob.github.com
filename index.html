@@ -528,7 +528,13 @@
           html_ += '<div class="colors frow">';
           for (i = 0; i < images_keys.length; i++) {
             k = images_keys[i];
-            html_ += '<div ' + (images_keys.length > 1 ? 'onclick="colorClicked(this)"' : '') + ' data-color-name="' + product['colors'][k] + '"' + ' data-color="' + k + '" style="background-color: ' + k + '"' + (i == 0 ? ' class="active"' : '') + '></div>';
+            color_border = 'none';
+            if (product['color_borders'] != undefined) {
+              if (product['color_borders'][k] != undefined) {
+                color_border = '2px solid ' + product['color_borders'][k];
+              }
+            }
+            html_ += '<div ' + (images_keys.length > 1 ? 'onclick="colorClicked(this)"' : '') + ' data-color-name="' + product['colors'][k] + '"' + ' data-color="' + k + '" style="background-color: ' + k + '; border: ' + color_border + '"' + (i == 0 ? ' class="active"' : '') + '></div>';
           }
           html_ += '</div>';
           html_ += '</div>';
@@ -554,7 +560,7 @@
       setInterval(function() {
         $('.main .content').removeClass('ha');
         $('.main .content:nth-child(' + String(cur_cat) + ')').addClass('ha');
-        if (cur_cat == 3) {
+        if (cur_cat == $('.scroller > .content').length) {
           cur_cat = 1;
         } else {
           cur_cat += 1;
