@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script type="text/javascript" src="images/config.js"></script>
+    <script type="text/javascript" src="../images/config.js"></script>
   </head>
   
   <style>
@@ -165,7 +165,7 @@
 
     .products > div {
       width: 300px;
-      height: 630px;
+      height: 600px;
       padding: 30px;
       border-radius: 20px;
       background-color: #F8F4F9;
@@ -321,6 +321,40 @@
       margin-right: 15px;
     }
 
+    @keyframes contactanosanim {
+      0% { transform: rotate(0deg); }
+      80% { transform: rotate(0deg); }
+      85% { transform: rotate(5deg); }
+      90% { transform: rotate(-5deg); }
+      95% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .contactanos {
+      transition: all 0.5s ease;
+      cursor: pointer;
+      width: auto;
+      margin-inline: auto;
+      background-color: #DD7755;
+      border-radius: 20px;
+      padding: 5px;
+      padding-inline: 10px;
+      margin-bottom: 10px;
+      font-size: 14pt; text-align: center; font-family: 'Alice';
+      animation-name: contactanosanim;
+      animation-timing-function: ease-in-out;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    .contactanos:hover {
+      background-color: #EDB6A3;
+    }
+
+    .contactanos:active {
+      opacity: 0.5;
+    }
+
     /* For Mobile */
     @media only screen and (pointer:none), (pointer:coarse) {
       .title2 {
@@ -414,7 +448,7 @@
         </div>
       </div>
   
-      <div class="fcol w100 h100" style="background-color: #F8F4F9;">
+      <div class="fcol w100" style="background-color: #F8F4F9;">
         <div class="h100 w100" style="position: relative">
           <div class="fcol content w100 h100">
             <div class="cats frow js"></div>
@@ -422,9 +456,16 @@
           </div>
         </div>
       </div>
+
+      <div class="fcol w100" style="padding-top: 20px; padding-bottom: 50px; background: rgb(255,217,206); background: linear-gradient(0deg, rgba(255,217,206,1) 13%, rgba(248,244,249,1) 100%);">
+        <div class="contactanos" onclick="contactanos()">Contactanos</div>
+        <div class="w100" style="font-family: 'Pacifico'; font-size: 14pt; text-align: center">Bolston, 2023</div>
+      </div>
     </div>
 
     <script>
+      var cats_offset = $('.cats').offset().top - 30;
+
       is_mobile_ = window.matchMedia("only screen and (pointer:none), (pointer:coarse)").matches;
 
       cur_cat = 2;
@@ -435,7 +476,7 @@
         html_ = '<div class="content w100 h100' + (sid_ == 0 ? ' ha' : '') + '">';
         html_ += '<div class="title2 cvh">' + i['text'] + '</div>';
         html_ += '<div class="cvh imgparent frow">';
-        html_ += '<img class="main" src="images/' + i['image'] + '" alt="">';
+        html_ += '<img class="main" src="../images/' + i['image'] + '" alt="">';
         html_ += '</div>';
         html_ += '</div>';
 
@@ -447,8 +488,9 @@
       cat_id = 0;
       for (const cat of product_config['categories']) {
         catname = cat['name'];
+        shortname = cat['shortname'];
 
-        $('.cats').append('<div' + (cat_id == 0 ? ' class="active"' : '') + ' data-cat="' + catname + '">' + (is_mobile_ ? (cat_id == 0 ? catname : ('[' + catname.charAt(0) + ']')) : catname) + '</div>');
+        $('.cats').append('<div' + (cat_id == 0 ? ' class="active"' : '') + ' data-cat="' + catname + '" data-shortname="' + shortname + '">' + (is_mobile_ ? (cat_id == 0 ? catname : ('[' + shortname + ']')) : catname) + '</div>');
 
         product_id = 0;
         for (const product of cat['products']) {
@@ -465,7 +507,7 @@
           images_keys = Object.keys(product['images']);
           images_ = product['images'][images_keys[0]];
           for (const i of images_) {
-            html_ += '<img src="' + 'images/' + i + '" alt="">';
+            html_ += '<img src="' + '../images/' + i + '" alt="">';
           }
           html_ += '</div>';
 
@@ -554,23 +596,30 @@
         images = product_config['categories'][cat_id]['products'][product_id]['images'][color];
 
         for (const i of images) {
-          $(product).find('.img-parent').append('<img src="' + 'images/' + i + '">');
+          $(product).find('.img-parent').append('<img src="' + '../images/' + i + '">');
           if (images.length > 1) {
             $(product).find('.bullets > div').append('<div onclick="bulletClicked(this)"></div>');
           }
         }
         $(product).find('.bullets > div > div:first-child').addClass('active');
+        $(product).find('.img-parent').animate({
+            scrollLeft: 0
+        }, 500);
       }
 
       function arrowClicked() {
         $('.scrollable').animate({
-            scrollTop: $('.cats').offset().top - 30
+            scrollTop: cats_offset
         }, 1000);
       }
 
       function quieroClicked(this_, code) {
         color_ = $(this_).closest('.product').find('.colors > div.active').attr('data-color-name');
-        window.location = 'https://api.whatsapp.com/send?phone=51912825315&text=Hello! I want to know more about product ' + code + ' of color ' + color_;
+        window.location = 'https://api.whatsapp.com/send?phone=' + product_config['phone'] + '&text=Hola! Quiero saber más de producto con codigo ' + code + ' de color ' + color_;
+      }
+
+      function contactanos() {
+        window.location = 'https://api.whatsapp.com/send?phone=' + product_config['phone'] + '&text=Hola! ';
       }
 
       $('.cats > div').on('click', function() {
@@ -583,7 +632,7 @@
 
         if (is_mobile_) {
           $('.cats > div').each(function(i, el) {
-            $(el).text('[' + $(el).attr('data-cat').charAt(0) + ']');
+            $(el).text('[' + $(el).attr('data-shortname') + ']');
           })
           $(this).text($(this).attr('data-cat'));
         }
