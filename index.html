@@ -213,7 +213,6 @@
 
     .products > div .price {
       font-size: 32pt;
-      margin-top: 10px;
     }
 
     .products > div .price > span {
@@ -498,9 +497,15 @@
           desc = product['description'];
           price = product['price'];
           sku = product['code'];
+          height = undefined;
+          if (!is_mobile_) {
+            if (product['height'] != undefined) {
+              height = product['height'];
+            }
+          }
 
           // Build HTML
-          html_ = '<div class="fcol h100 jb product' + (cat_id == 0 ? '' : ' h') + '" data-cat="' + catname + '" data-cat-id="' + String(cat_id) + '" data-product-id="' + String(product_id) + '">';
+          html_ = '<div class="fcol h100 jb product' + (cat_id == 0 ? '' : ' h') + '"' + (height == undefined ? '' : ' style="height: ' + height + 'px"') +' data-cat="' + catname + '" data-cat-id="' + String(cat_id) + '" data-product-id="' + String(product_id) + '">';
           html_ += '<div>';
 
           html_ += '<div class="img-parent frow">';
