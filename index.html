@@ -561,16 +561,18 @@
         }
         cat_id += 1;
       }
-
-      setInterval(function() {
-        $('.main .content').removeClass('ha');
-        $('.main .content:nth-child(' + String(cur_cat) + ')').addClass('ha');
-        if (cur_cat == $('.scroller > .content').length) {
-          cur_cat = 1;
-        } else {
-          cur_cat += 1;
-        }
-      }, 4000)
+      
+      if (product_config['categories'].length > 1) {
+        setInterval(function() {
+          $('.main .content').removeClass('ha');
+          $('.main .content:nth-child(' + String(cur_cat) + ')').addClass('ha');
+          if (cur_cat == $('.scroller > .content').length) {
+            cur_cat = 1;
+          } else {
+            cur_cat += 1;
+          }
+        }, 4000) 
+      }
 
       function bulletClicked(this_) {
         $(this_).parent().find('div').removeClass('active');
