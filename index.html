@@ -239,12 +239,12 @@
       color: #001A23;
     }
 
-    .products button:hover {
+    .products .product:not(.out_of_stock) button:hover {
       background-color: #DD7755;
       transform: scale(1.05);
     }
 
-    .products button:active {
+    .products .product:not(.out_of_stock) button:active {
       opacity: 0.5;
     }
 
@@ -352,6 +352,26 @@
 
     .contactanos:active {
       opacity: 0.5;
+    }
+
+    .product.out_of_stock {
+        opacity: 0.25;
+        position: relative;
+    }
+
+    .product.out_of_stock::after {
+        content: "AGOTADO";
+        font-size: 20pt;
+        color: black;
+        background-color: #f45b69;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 5px;
+        padding-inline: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
     }
 
     /* For Mobile */
@@ -497,6 +517,7 @@
           desc = product['description'];
           price = product['price'];
           sku = product['code'];
+          out_of_stock = product['out_of_stock'];
           height = undefined;
           if (!is_mobile_) {
             if (product['height'] != undefined) {
@@ -505,7 +526,7 @@
           }
 
           // Build HTML
-          html_ = '<div class="fcol h100 jb product' + (cat_id == 0 ? '' : ' h') + '"' + (height == undefined ? '' : ' style="height: ' + height + 'px"') +' data-cat="' + catname + '" data-cat-id="' + String(cat_id) + '" data-product-id="' + String(product_id) + '">';
+          html_ = '<div class="fcol' + (out_of_stock ? ' out_of_stock' : '') + ' h100 jb product' + (cat_id == 0 ? '' : ' h') + '"' + (height == undefined ? '' : ' style="height: ' + height + 'px"') +' data-cat="' + catname + '" data-cat-id="' + String(cat_id) + '" data-product-id="' + String(product_id) + '">';
           html_ += '<div>';
 
           html_ += '<div class="img-parent frow">';
@@ -549,7 +570,9 @@
           html_ += '<div class="frow jb">';
           html_ += '<div class="price"><span>S/</span>' + String(price) + '</div>';
           html_ += '<div class="fcol je">';
-          html_ += '<button onclick="quieroClicked(this, ' + "'" + sku + "'" + ')">Quiero</button>';
+          if (!out_of_stock) {
+            html_ += '<button onclick="quieroClicked(this, ' + "'" + sku + "'" + ')">Quiero</button>';
+          }
           html_ += '</div>';
           html_ += '</div>';
           html_ += '</div>';
