@@ -263,6 +263,45 @@ product_config = {
                     "price": 130,
                     "code": "CAR19"
                 },
+
+                {
+                    "images": {
+                        "rgb(44, 50, 59)": ["carteras/20.png"]
+                    },
+                    "colors": {
+                        "rgb(44, 50, 59)": "Negro"
+                    },
+                    "name": "",
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color negro",
+                    "price": 130,
+                    "code": "CAR20"
+                },
+
+                {
+                    "images": {
+                        "rgb(155, 144, 125)": ["carteras/21.png"]
+                    },
+                    "colors": {
+                        "rgb(155, 144, 125)": "Nougat"
+                    },
+                    "name": "",
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color nougat",
+                    "price": 130,
+                    "code": "CAR21"
+                },
+
+                {
+                    "images": {
+                        "rgb(190, 191, 173)": ["carteras/22.png"]
+                    },
+                    "colors": {
+                        "rgb(190, 191, 173)": "Silver"
+                    },
+                    "name": "",
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color silver",
+                    "price": 130,
+                    "code": "CAR22"
+                },
             ]
         },
 
