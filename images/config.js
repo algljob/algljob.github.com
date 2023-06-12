@@ -25,8 +25,8 @@ product_config = {
                         "rgb(157, 45, 49)": "Rojo"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color rojo",
+                    "price": 130,
                     "code": "CAR01"
                 },
 
@@ -38,8 +38,8 @@ product_config = {
                         "rgb(175, 112, 55)": "Marron"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
+                    "price": 130,
                     "code": "CAR02"
                 },
 
@@ -51,8 +51,8 @@ product_config = {
                         "rgb(145, 82, 8)": "Marron"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
+                    "price": 130,
                     "code": "CAR03"
                 },
 
@@ -64,8 +64,8 @@ product_config = {
                         "rgb(151, 92, 55)": "Marron"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
+                    "price": 130,
                     "code": "CAR04"
                 },
 
@@ -77,8 +77,8 @@ product_config = {
                         "rgb(132, 76, 36)": "Marron"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
+                    "price": 130,
                     "code": "CAR05"
                 },
 
@@ -90,8 +90,8 @@ product_config = {
                         "rgb(58, 73, 107)": "Azul"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color azul",
+                    "price": 130,
                     "code": "CAR06"
                 },
 
@@ -103,8 +103,8 @@ product_config = {
                         "rgb(132, 76, 36)": "Marron"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
+                    "price": 130,
                     "code": "CAR07"
                 },
 
@@ -116,8 +116,8 @@ product_config = {
                         "rgb(152, 164, 107)": "Verde"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color verde",
+                    "price": 130,
                     "code": "CAR08"
                 },
 
@@ -129,8 +129,8 @@ product_config = {
                         "rgb(43, 47, 51)": "Negro"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color negro",
+                    "price": 130,
                     "code": "CAR09"
                 },
 
@@ -142,8 +142,8 @@ product_config = {
                         "rgb(43, 47, 51)": "Negro"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color negro",
+                    "price": 130,
                     "code": "CAR10"
                 },
 
@@ -155,8 +155,8 @@ product_config = {
                         "rgb(44, 53, 78)": "Azul"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color azul",
+                    "price": 130,
                     "code": "CAR11"
                 },
 
@@ -168,8 +168,8 @@ product_config = {
                         "rgb(134, 85, 44)": "Marron"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
+                    "price": 130,
                     "code": "CAR12"
                 },
 
@@ -181,8 +181,8 @@ product_config = {
                         "rgb(35, 41, 65)": "Azul"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color azul",
+                    "price": 130,
                     "code": "CAR13"
                 },
 
@@ -194,8 +194,8 @@ product_config = {
                         "rgb(41, 48, 80)": "Azul"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color azul",
+                    "price": 130,
                     "code": "CAR14"
                 },
 
@@ -207,8 +207,8 @@ product_config = {
                         "rgb(44, 50, 59)": "Negro"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color negro",
+                    "price": 130,
                     "code": "CAR15"
                 },
 
@@ -220,8 +220,8 @@ product_config = {
                         "rgb(152, 164, 107)": "Verde"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color verde",
+                    "price": 130,
                     "code": "CAR16"
                 },
 
@@ -233,8 +233,8 @@ product_config = {
                         "rgb(44, 57, 89)": "Azul"
                     },
                     "name": "",
-                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser",
-                    "price": 0,
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color azul",
+                    "price": 130,
                     "code": "CAR17"
                 },
             ]
