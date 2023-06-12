@@ -40,8 +40,7 @@ product_config = {
                     "name": "",
                     "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
                     "price": 130,
-                    "code": "CAR02",
-                    "out_of_stock": true
+                    "code": "CAR02"
                 },
 
                 {
@@ -54,8 +53,7 @@ product_config = {
                     "name": "",
                     "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color marron",
                     "price": 130,
-                    "code": "CAR03",
-                    "out_of_stock": true
+                    "code": "CAR03"
                 },
 
                 {
