@@ -237,6 +237,32 @@ product_config = {
                     "price": 130,
                     "code": "CAR17"
                 },
+
+                {
+                    "images": {
+                        "rgb(165, 182, 124)": ["carteras/18.png"]
+                    },
+                    "colors": {
+                        "rgb(165, 182, 124)": "Verde"
+                    },
+                    "name": "",
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color verde",
+                    "price": 130,
+                    "code": "CAR18"
+                },
+
+                {
+                    "images": {
+                        "rgb(41, 48, 80)": ["carteras/19.png"]
+                    },
+                    "colors": {
+                        "rgb(41, 48, 80)": "Azul"
+                    },
+                    "name": "",
+                    "description": "Juego de 3 piezas: Cartera, Morral y Neceser de color azul",
+                    "price": 130,
+                    "code": "CAR19"
+                },
             ]
         },
 
